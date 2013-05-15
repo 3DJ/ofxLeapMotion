@@ -1,5 +1,5 @@
-#include "testApp.h"
 #include "LeapMotion.h"
+#include "testApp.h"
 
 //--------------------------------------------------------------
 void testApp::setup(){
