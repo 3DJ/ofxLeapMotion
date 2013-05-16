@@ -4,18 +4,18 @@
 //--------------------------------------------------------------
 void testApp::setup(){
     // Create a sample listener and controller
-    SampleListener listener;
-    Controller controller;
+    SampleListener *listener = new SampleListener();
+    Controller *controller = new Controller();
 
     // Have the sample listener receive events from the controller
-    controller.addListener(listener);
+    controller->addListener(*listener);
 
     // Keep this process running until Enter is pressed
     std::cout << "Press Enter to quit..." << std::endl;
-    std::cin.get();
+    //std::cin.get();
 
     // Remove the sample listener when done
-    controller.removeListener(listener);
+    //controller.removeListener(listener);
 }
 
 //--------------------------------------------------------------

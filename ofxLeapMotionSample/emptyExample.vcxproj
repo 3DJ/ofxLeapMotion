@@ -108,11 +108,11 @@ copy "$(ProjectDir)..\..\..\addons\ofxLeapMotion\bin\win\$(Configuration)\*.*" "
   <ItemGroup>
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\testApp.cpp" />
-    <ClCompile Include="..\..\..\addons\ofxLeapMotion\src\LeapMotion.cpp" />
+    <ClCompile Include="src\LeapMotion.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\testApp.h" />
-    <ClInclude Include="..\..\..\addons\ofxLeapMotion\src\LeapMotion.h" />
+    <ClInclude Include="src\LeapMotion.h" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\..\libs\openFrameworksCompiled\project\vs2010\openframeworksLib.vcxproj">
