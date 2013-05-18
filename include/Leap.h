@@ -84,7 +84,7 @@ class HandList;
 class GestureList;
 class Hand;
 class Gesture;
-class Screen;
+class LeapScreen;
 class Frame;
 class Listener;
 
@@ -1405,10 +1405,10 @@ class KeyTapGesture : public Gesture
  * valid screen coordinate data and do not correspond to a physical entity.
  * Test for validity with the Screen::isValid() function.
  */
-class Screen : public Interface {
+class LeapScreen : public Interface {
   public:
     // For internal use only.
-    Screen(ScreenImplementation*);
+    LeapScreen(ScreenImplementation*);
 
     /**
      * Constructs a Screen object.
@@ -1417,7 +1417,7 @@ class Screen : public Interface {
      * Get valid Screen objects from a ScreenList object obtained using the
      * Controller::locatedScreens() method.
      */
-    LEAP_EXPORT Screen();
+    LEAP_EXPORT LeapScreen();
 
     /**
      * A unique identifier for this screen based on the screen
@@ -1711,24 +1711,24 @@ class Screen : public Interface {
      *
      * @returns The invalid Screen instance.
      */
-    LEAP_EXPORT static const Screen& invalid();
+    LEAP_EXPORT static const LeapScreen& invalid();
 
     /**
      * Compare Screen object equality.
      * Two Screen objects are equal if and only if both Screen objects represent the
      * exact same Screens and both Screens are valid.
      */
-    LEAP_EXPORT bool operator==(const Screen&) const;
+    LEAP_EXPORT bool operator==(const LeapScreen&) const;
 
     /**
      * Compare Screen object inequality.
      * Two Screen objects are equal if and only if both Screen objects represent the
      * exact same Screens and both Screens are valid.
      */
-    LEAP_EXPORT bool operator!=(const Screen&) const;
+    LEAP_EXPORT bool operator!=(const LeapScreen&) const;
 
     /** Writes a brief, human readable description of the Screen object. */
-    LEAP_EXPORT friend std::ostream& operator<<(std::ostream&, const Screen&);
+    LEAP_EXPORT friend std::ostream& operator<<(std::ostream&, const LeapScreen&);
 
     /**
      * A string containing a brief, human readable description of the Screen object.
@@ -2164,7 +2164,7 @@ class GestureList : public Interface {
 class ScreenList : public Interface {
   public:
     // For internal use only.
-    ScreenList(const ListBaseImplementation<Screen>&);
+    ScreenList(const ListBaseImplementation<LeapScreen>&);
 
     /** Constructs an empty list of screens. */
     LEAP_EXPORT ScreenList();
@@ -2192,10 +2192,10 @@ class ScreenList : public Interface {
      * @param index The zero-based list position index.
      * @returns The Screen object at the specified index.
      */
-    LEAP_EXPORT Screen operator[](int index) const;
+    LEAP_EXPORT LeapScreen operator[](int index) const;
 
     /** A C++ iterator type for this ScreenList objects. */
-    typedef ConstListIterator<ScreenList, Screen> const_iterator;
+    typedef ConstListIterator<ScreenList, LeapScreen> const_iterator;
 
     /** The C++ iterator set to the beginning of this ScreenList. */
     LEAP_EXPORT const_iterator begin() const;
@@ -2227,7 +2227,7 @@ class ScreenList : public Interface {
      * is pointing, or, if the pointable is not pointing in the direction of
      * any known screen, an invalid Screen object.
      */
-    LEAP_EXPORT Screen closestScreenHit(const Pointable& pointable) const;
+    LEAP_EXPORT LeapScreen closestScreenHit(const Pointable& pointable) const;
 
     /**
      * Gets the closest Screen intercepting a ray projecting from the specified
@@ -2254,7 +2254,7 @@ class ScreenList : public Interface {
      * or, if the ray is not pointing in the direction of any known screen,
      * an invalid Screen object.
      */
-    LEAP_EXPORT Screen closestScreenHit(const Vector& position, const Vector& direction) const;
+    LEAP_EXPORT LeapScreen closestScreenHit(const Vector& position, const Vector& direction) const;
 
     /**
      * Gets the Screen closest to the specified position.
@@ -2269,7 +2269,7 @@ class ScreenList : public Interface {
      * @param position The position from which to check for screen projection.
      * @returns The closest Screen onto which the specified position is projected.
      */
-    LEAP_EXPORT Screen closestScreen(const Vector& position) const;
+    LEAP_EXPORT LeapScreen closestScreen(const Vector& position) const;
 };
 
 /**
