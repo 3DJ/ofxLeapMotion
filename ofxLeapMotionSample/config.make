@@ -16,7 +16,8 @@ USER_CFLAGS = -I ../../../addons/ofxLeapMotion/include
 # for example libraries like:
 # USER_LDFLAGS = libs/libawesomelib.a
 
-USER_LDFLAGS = -L $OPENNI_DIR/Redist
+# add the link path
+USER_LDFLAGS = -L /usr/lib/Leap
 USER_LIBS = -lusb-1.0 -lLeap
 
 EXCLUDE_FROM_SOURCE="bin,.xcodeproj,obj"
