@@ -71,9 +71,10 @@
       <AdditionalLibraryDirectories>..\..\..\addons\ofxLeapMotion\lib\win\x86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
     <PostBuildEvent />
+    <PostBuildEvent />
     <PostBuildEvent>
       <Command>xcopy /e /i /y "$(ProjectDir)..\..\..\export\vs2010\*.dll" "$(ProjectDir)bin"
-copy "$(ProjectDir)..\..\..\addons\ofxLeapMotion\bin\win\$(Configuration)\*.*" "$(ProjectDir)bin"</Command>
+copy "$(ProjectDir)..\..\..\addons\ofxLeapMotion\lib\win\x86\*.dll" "$(ProjectDir)bin"</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -102,7 +103,7 @@ copy "$(ProjectDir)..\..\..\addons\ofxLeapMotion\bin\win\$(Configuration)\*.*" "
     <PostBuildEvent />
     <PostBuildEvent>
       <Command>xcopy /e /i /y "$(ProjectDir)..\..\..\export\vs2010\*.dll" "$(ProjectDir)bin"
-copy "$(ProjectDir)..\..\..\addons\ofxLeapMotion\bin\win\$(Configuration)\*.*" "$(ProjectDir)bin"</Command>
+copy "$(ProjectDir)..\..\..\addons\ofxLeapMotion\lib\win\x86\*.dll" "$(ProjectDir)bin"</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
